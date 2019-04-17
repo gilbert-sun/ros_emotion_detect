@@ -1,0 +1,2 @@
+INFO:tensorflow:Restoring parameters from models/inception_5/model.ckpt-60000
+INFO:rospy.core:signal_shutdown [atexit]

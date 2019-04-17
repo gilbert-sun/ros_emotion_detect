@@ -1,0 +1,6 @@
+model_checkpoint_path: "/home/n200/A40424/TF-slim/train_model_inception_5/model.ckpt-60000"
+all_model_checkpoint_paths: "/home/n200/A40424/TF-slim/train_model_inception_5/model.ckpt-57953"
+all_model_checkpoint_paths: "/home/n200/A40424/TF-slim/train_model_inception_5/model.ckpt-58532"
+all_model_checkpoint_paths: "/home/n200/A40424/TF-slim/train_model_inception_5/model.ckpt-59112"
+all_model_checkpoint_paths: "/home/n200/A40424/TF-slim/train_model_inception_5/model.ckpt-59692"
+all_model_checkpoint_paths: "/home/n200/A40424/TF-slim/train_model_inception_5/model.ckpt-60000"

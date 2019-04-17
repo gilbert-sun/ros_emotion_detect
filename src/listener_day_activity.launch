@@ -1,0 +1,5 @@
+<launch>
+  <node name="listener_day_act" pkg="ros_emotion_detect" type="listener_dayActivity.py" output="screen"/>
+    <remap from="CVsub1" to="/usb_cam/image_raw"/>
+
+</launch>
