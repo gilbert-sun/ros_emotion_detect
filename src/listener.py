@@ -36,7 +36,7 @@ class EmotionClassifier():
 		CLASSES = ['anger', ' happy ', 'neutral', ' sad ', 'surprise']
 
 		image_size = 160
-		checkpoints_dir = 'models/inception_5/'
+		checkpoints_dir = '/root/catkin_ws/src/ros_emotion_detect/src/models/inception_5/'
 
 		logging.basicConfig(filename='result.log', filemode='w', level=logging.INFO)
 		self.logger = logging.getLogger('emotion classifier')
@@ -73,7 +73,7 @@ class RosEmotion():
 
 		self._initNode = rospy.init_node('listener', anonymous=True)
 
-		self._sub = rospy.Subscriber('CVsub1', Image, self.callback, queue_size=1, buff_size = 52428800)
+		self._sub = rospy.Subscriber('/usb_cam/image_raw', Image, self.callback, queue_size=1, buff_size = 52428800)
 
 		self._pub = rospy.Publisher('CVpub', Image, queue_size=1)
 
@@ -92,7 +92,7 @@ class RosEmotion():
 #----------------20181129-------------------------------------------------------------------------------
  
 	def callback(self, imgmsg):
-		face_cascade = cv2.CascadeClassifier('./cascades/haarcascade_frontalface_alt.xml')
+		face_cascade = cv2.CascadeClassifier('/opt/ros/kinetic/share/OpenCV-3.3.1-dev/haarcascades/haarcascade_frontalface_alt.xml')#./cascades/haarcascade_frontalface_alt.xml')
 
 		frame = self.bridge.imgmsg_to_cv2(imgmsg, "bgr8")
 

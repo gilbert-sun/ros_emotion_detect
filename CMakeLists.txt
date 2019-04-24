@@ -36,6 +36,7 @@ catkin_install_python(PROGRAMS
   src/client_faceType_emotion.py
   DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}/src
 )
+
 install(FILES
   src/emotion.launch
   src/emotion10.launch
@@ -43,6 +44,42 @@ install(FILES
   DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}/src
 )
 
+install(FILES
+  src/models/inception_5/checkpoint
+  src/models/inception_5/graph.pbtxt
+  src/models/inception_5/model.ckpt-60000.data-00000-of-00001
+  src/models/inception_5/model.ckpt-60000.index
+  src/models/inception_5/model.ckpt-60000.meta
+  DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}/src/models/inception_5
+)
+
+catkin_install_python(PROGRAMS
+  src/listener.py
+  src/listener_dayActivity.py
+  src/listener_fallPosReport.py
+  src/talker.py
+  src/clientFlask1.py
+  src/client_dayActivity.py
+  src/client_dayFalling.py
+  src/client_faceType_emotion.py
+  DESTINATION /opt/ros/kinetic/share/ros_emotion_detect/src
+)
+
+install(FILES
+  src/emotion.launch
+  src/emotion10.launch
+  src/listener_day_activity.launch
+  DESTINATION /opt/ros/kinetic/share/ros_emotion_detect/src
+)
+
+install(FILES
+  src/models/inception_5/checkpoint
+  src/models/inception_5/graph.pbtxt
+  src/models/inception_5/model.ckpt-60000.data-00000-of-00001
+  src/models/inception_5/model.ckpt-60000.index
+  src/models/inception_5/model.ckpt-60000.meta
+  DESTINATION /opt/ros/kinetic/share/ros_emotion_detect/src/models/inception_5
+)
 
 
 ## Uncomment this if the package has a setup.py. This macro ensures
